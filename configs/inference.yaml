@@ -1,0 +1,12 @@
+model_id: "google/gemma-3-1b-it"
+
+dataset_id: "HuggingFaceTB/Countdown-Task-GOLD"
+dataset_config: "all"
+split: "train"
+num_samples: 200        # null = весь сплит
+
+max_new_tokens: 512
+
+use_wandb: false
+wandb_project: "llm-distillation"
+wandb_run_name: "inference-gemma-3-1b"
