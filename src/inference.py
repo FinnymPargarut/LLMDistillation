@@ -50,7 +50,7 @@ def build_prompt(tokenizer, nums: list[int], target: int) -> str:
     )
 
 
-def run_inference(config: dict, model_path: str | None = None):
+def run_inference(config: dict, model_path: str | None = None, dry_run: bool = False):
     model_id = model_path or config["model_id"]
 
     if config.get("use_wandb"):
@@ -80,7 +80,7 @@ def run_inference(config: dict, model_path: str | None = None):
     if config.get("num_samples"):
         dataset = dataset.select(range(config["num_samples"]))
     print(f"Evaluating on {len(dataset)} samples")
-    if args.dry_run:
+    if dry_run:
         dataset = dataset.select(range(1))
         config["max_new_tokens"] = 10
         config["use_wandb"] = False
@@ -162,4 +162,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     config = load_config(args.config)
-    run_inference(config, model_path=args.model_path)
+    run_inference(config, model_path=args.model_path, dry_run=args.dry_run)
