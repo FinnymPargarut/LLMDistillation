@@ -8,3 +8,4 @@ tqdm>=4.67.3
 transformers>=5.5.4
 wandb>=0.26.0
 python-dotenv>=1.2.2
+kagglehub>=1.0.0

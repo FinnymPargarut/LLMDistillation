@@ -9,11 +9,16 @@ __pycache__/
 .idea/
 .vscode/
 
+# Data
+*.parquet
+
 # Outputs
 #outputs/
 *.csv
 *.safetensors
 *.bin
+*.txt
+INFO.md
 
 # Wandb
 wandb/
