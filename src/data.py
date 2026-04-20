@@ -1,4 +1,7 @@
+from pathlib import Path
 from datasets import load_dataset, Dataset
+
+PROJECT_DIR = Path(__file__).resolve().parent.parent
 
 
 def load_countdown_dataset():
@@ -12,7 +15,7 @@ def make_splits(ds, dev_size=200, seed=42):
     return train, dev
 
 
-def load_splits(path="../data/splits"):
+def load_splits(path=PROJECT_DIR / "data/splits"):
     train = Dataset.from_parquet(f"{path}/train.parquet")
     dev = Dataset.from_parquet(f"{path}/dev.parquet")
     return train, dev
