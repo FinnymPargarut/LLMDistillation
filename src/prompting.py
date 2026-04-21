@@ -12,7 +12,7 @@ def build_prompt(example: dict) -> list[dict[str, str]]:
             "role": "system"
         },
         {
-            "content": f"Using the numbers {example["nums"]}, create an equation that equals {example["target"]}. You can use basic arithmetic operations (+, -, *, /) and each number can only be used once. Show your work in <think> </think> tags. And return the final equation and answer in <answer> </answer> tags, for example <answer> (1 + 2) / 3 = 1 </answer>.",
+            "content": f"Using the numbers {example['nums']}, create an equation that equals {example['target']}. You can use basic arithmetic operations (+, -, *, /) and each number can only be used once. Show your work in <think> </think> tags. And return the final equation and answer in <answer> </answer> tags, for example <answer> (1 + 2) / 3 = 1 </answer>.",
             "role": "user"
         }
     ]
